@@ -36,8 +36,8 @@ class BaseModel:
         keys/values of __dict__ of the instance
         """
 
-        rdict = self.__dict__.copy()
-        rdict["created_at"] = self.created_at.isoformat()
-        rdict["updated_at"] = self.updated_at.isoformat()
-        rdict["__class__"] = self.__class__.__name__
-        return rdict
+        dict = self.__dict__.copy()
+        dict['created_at'] = self.created_at.isoformat()
+        dict['updated_at'] = self.updated_at.isoformat()
+        dict['__class__'] = self.__class__.__name__
+        return dict
